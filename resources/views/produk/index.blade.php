@@ -182,7 +182,7 @@
             </div>
         @endif
 
-        @forelse ($produks as $p)
+        @if ($produks->count() > 0)
             <table>
                 <thead>
                     <tr>
@@ -212,11 +212,11 @@
                     @endforeach
                 </tbody>
             </table>
-        @empty
+        @else
             <div class="empty-state">
                 <p>Belum ada data produk. <a href="{{ route('produk.create') }}">Buat produk baru</a></p>
             </div>
-        @endforelse
+        @endif
     </div>
 </body>
 </html>
